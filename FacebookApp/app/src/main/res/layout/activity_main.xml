@@ -1,18 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.quocanhnguyen.facebookapp.MainActivity">
 
-    <TextView
+    <com.facebook.login.widget.ProfilePictureView
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/imageProfilePictureView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerInParent="true" />
 
-</android.support.constraint.ConstraintLayout>
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
+    
+    <Button
+        android:layout_gravity="center"
+        android:text="Log out"
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:text="Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewFirstName"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:text="First name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:id="@+id/buttonFunction"
+        android:layout_gravity="center"
+        android:text="Facebook functions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
