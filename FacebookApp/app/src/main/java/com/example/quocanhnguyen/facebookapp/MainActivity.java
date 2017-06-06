@@ -43,11 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         Implement();
 
-        btnFunction.setVisibility(View.INVISIBLE);
-        btnLogout.setVisibility(View.INVISIBLE);
-        txtvName.setVisibility(View.INVISIBLE);
-        txtvEmail.setVisibility(View.INVISIBLE);
-        txtvFirstName.setVisibility(View.INVISIBLE);
+        setVisibility();
         loginButton.setReadPermissions(Arrays.asList("public_profile", "email"));
         setLogin_Button();
         setLogout_Button();
@@ -70,7 +66,15 @@ public class MainActivity extends AppCompatActivity {
 //    } catch (NoSuchAlgorithmException e) {
 //
 //    }
-}
+    }
+
+    private void setVisibility() {
+        btnFunction.setVisibility(View.INVISIBLE);
+        btnLogout.setVisibility(View.INVISIBLE);
+        txtvName.setVisibility(View.INVISIBLE);
+        txtvEmail.setVisibility(View.INVISIBLE);
+        txtvFirstName.setVisibility(View.INVISIBLE);
+    }
 
     private void ChangeScreen() {
         btnFunction.setOnClickListener(new View.OnClickListener() {
@@ -87,11 +91,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LoginManager.getInstance().logOut();
-                btnLogout.setVisibility(View.INVISIBLE);
-                btnFunction.setVisibility(View.INVISIBLE);
-                txtvName.setVisibility(View.INVISIBLE);
-                txtvEmail.setVisibility(View.INVISIBLE);
-                txtvFirstName.setVisibility(View.INVISIBLE);
+                setVisibility();
                 txtvEmail.setText("");
                 txtvName.setText("");
                 txtvFirstName.setText("");
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d("JSON", response.getJSONObject().toString());
                 try {
                     email = object.getString("email");
-                    name  = object.getString("name");
+                    name = object.getString("name");
                     firstname = object.getString("first_name");
 
                     profilePictureView.setProfileId(Profile.getCurrentProfile().getId());
