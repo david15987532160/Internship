@@ -47,12 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 if (mediaPlayer.isPlaying()) {
                     mediaPlayer.pause();
                     imgbtnPlay.setImageResource(R.drawable.play);
+                    imgDisk.clearAnimation();
                 } else {
                     mediaPlayer.start();
                     imgbtnPlay.setImageResource(R.drawable.pause);
+                    imgDisk.startAnimation(animation);
                 }
                 UpdateTimeSong();
-                imgDisk.startAnimation(animation);
             }
         });
 
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.release();
                 imgbtnPlay.setImageResource(R.drawable.play);
                 InitMediaPlayer();
+                imgDisk.clearAnimation();
             }
         });
 
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 imgbtnPlay.setImageResource(R.drawable.pause);
                 SetTimeTotal();
                 UpdateTimeSong();
+                imgDisk.startAnimation(animation);
             }
         });
 
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 imgbtnPlay.setImageResource(R.drawable.pause);
                 SetTimeTotal();
                 UpdateTimeSong();
+                imgDisk.startAnimation(animation);
             }
         });
 
