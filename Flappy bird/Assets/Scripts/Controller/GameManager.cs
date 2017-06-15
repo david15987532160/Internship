@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 
     void IsGameStartForTheFirstTime()
     {
-        if (PlayerPrefs.HasKey("IsGameStartForTheFirstTime"))
+        if (!PlayerPrefs.HasKey("IsGameStartForTheFirstTime"))
         {
             PlayerPrefs.SetInt(HIGH_SCORE, 0);
             PlayerPrefs.SetInt("IsGameStartForTheFirstTime", 0);

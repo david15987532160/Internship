@@ -42,14 +42,14 @@ public class GamePlayController : MonoBehaviour {
         scoreText.text = "" + score;
     }
 
-    public void _BirdDiedShowPanel(int score)
+    public void _BirdDiedShowPanel(int curScore)
     {
         gameOverPanel.SetActive(true);
 
-        endScoreText.text = "" + score;
-        if(score > GameManager.instance.GetHighScore())
+        endScoreText.text = "" + curScore;
+        if(curScore > GameManager.instance.GetHighScore())
         {
-            GameManager.instance.SetHighScore(score);
+            GameManager.instance.SetHighScore(curScore);
         }
         bestScoreText.text = "" + GameManager.instance.GetHighScore();
     }
