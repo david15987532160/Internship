@@ -68,16 +68,16 @@ public class BirdController : MonoBehaviour {
         if(myBody.velocity.y > 0)
         {
             float angel = 0;
-            angel = Mathf.Lerp(0, 90, myBody.velocity.y / 7);
+            angel = Mathf.Lerp(0, 45, myBody.velocity.y / 7);
             transform.rotation = Quaternion.Euler(0, 0, angel);
         }
         else if(myBody.velocity.y == 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-        }else if (myBody.velocity.y > 0)
+        }else if (myBody.velocity.y < 0)
         {
             float angel = 0;
-            angel = Mathf.Lerp(0, 90, myBody.velocity.y / 7);
+            angel = Mathf.Lerp(0, -45, -myBody.velocity.y / 7);
             transform.rotation = Quaternion.Euler(0, 0, angel);
         }
     }
